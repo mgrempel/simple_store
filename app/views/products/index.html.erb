@@ -1,9 +1,9 @@
-<h1>Products#index</h1>
+<h1>Products</h1>
 
 <table>
   <%@products.each do |product|%>
 <tr>
-  <td><%= product.title %></td>
+  <td><%= link_to product.title, product_path(product) %></td>
 </tr>
 <%end%>
 </table>

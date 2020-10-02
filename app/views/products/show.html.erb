@@ -1,0 +1,12 @@
+<h1><%= @product.title %></h1>
+<table>
+  <tr>
+  <td>Price: $<%= @product.price %></td>
+  <td>Quantity: <%= @product.stock_quantity %></td>
+  </tr>
+  <tr>
+    <td><%= @product.description %></td>
+  </tr>
+</table>
+
+<%=link_to 'Back', products_path%>
