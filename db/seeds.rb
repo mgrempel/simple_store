@@ -12,11 +12,7 @@ products = CSV.parse(csv_data, headers: true)
 
 products.each do |product|
   # Check if category exists, if not, create it
-  category = if Category.exists?(name: product["category"])
-               Category.where(name: product["category"]).first
-             else
-               Category.create(name: product["category"])
-             end
+  category = Category.find_or_create_by(name: product["category"])
 
   category.products.build(title:          product["name"],
                           description:    product["description"],
