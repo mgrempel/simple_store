@@ -4,6 +4,7 @@
   <%@products.each do |product|%>
 <tr>
   <td><%= link_to product.title, product_path(product) %></td>
+  <td><%= product.category.name %></td>
 </tr>
 <%end%>
 </table>
